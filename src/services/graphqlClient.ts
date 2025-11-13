@@ -95,6 +95,15 @@ class GraphQLChatClient {
   }
 
   /**
+   * 获取当前 API 端点
+   *
+   * @returns 当前使用的 GraphQL API 端点 URL
+   */
+  getEndpoint(): string {
+    return this.endpoint;
+  }
+
+  /**
    * 更新 API 端点
    *
    * 用于动态切换不同的后端服务
