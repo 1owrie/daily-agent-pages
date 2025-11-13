@@ -1,0 +1,9 @@
+name = "daily-agent-pages"
+compatibility_date = "2025-11-11"
+
+# Pages 配置
+pages_build_output_dir = "dist"
+
+# 如果需要环境变量（在 Cloudflare Dashboard 配置）
+# [env.production.vars]
+# WORKERS_URL = "https://daily-agent-workers.your-subdomain.workers.dev"
