@@ -178,7 +178,7 @@ class GraphQLChatClient {
  *
  * 根据环境自动选择合适的端点：
  * 1. 优先使用环境变量 VITE_GRAPHQL_ENDPOINT
- * 2. 生产环境使用 VITE_WORKERS_URL 或相对路径
+ * 2. 生产环境使用 VITE_WORKERS_URL 或默认 Workers 地址
  * 3. 开发环境使用本地 Workers 地址
  *
  * @returns GraphQL API 端点 URL
@@ -195,8 +195,8 @@ const getGraphQLEndpoint = (): string => {
     if (import.meta.env.VITE_WORKERS_URL) {
       return `${import.meta.env.VITE_WORKERS_URL}/graphql`;
     }
-    // 否则使用相对路径（会通过 Pages Functions 或当前域名）
-    return `${window.location.origin}/graphql`;
+    // 默认使用生产环境的 Workers 地址
+    return 'https://agent-workers.460229242.workers.dev/graphql';
   }
 
   // 3. 本地开发环境
